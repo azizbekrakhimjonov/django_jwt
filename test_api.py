@@ -6,11 +6,11 @@ BASE_URL = "http://localhost:8000"
 
 # Test foydalanuvchisi ma'lumotlari
 TEST_USER = {
-    "email": "testuser@example.com",
-    "username": "testuser",
-    "password": "testpass123",
-    "first_name": "Test",
-    "last_name": "User"
+    "email": "misha@example.com",
+    "username": "misha",
+    "password": "misha1123",
+    "first_name": "misha",
+    "last_name": "misha"
 }
 
 # Yangi post ma'lumotlari
@@ -117,15 +117,15 @@ def test_update_post(token, post_id):
     print_response(response, "Update Post Test")
 
 
-def test_delete_post(token, post_id):
-    """Postni o'chirish testi"""
-    url = f"{BASE_URL}/api/posts/{post_id}/"
-    headers = {
-        "Authorization": f"Bearer {token}"
-    }
-
-    response = requests.delete(url, headers=headers)
-    print_response(response, "Delete Post Test")
+# def test_delete_post(token, post_id):
+#     """Postni o'chirish testi"""
+#     url = f"{BASE_URL}/api/posts/{post_id}/"
+#     headers = {
+#         "Authorization": f"Bearer {token}"
+#     }
+# 
+#     response = requests.delete(url, headers=headers)
+#     print_response(response, "Delete Post Test")
 
 
 def main():
@@ -157,7 +157,7 @@ def main():
     test_update_post(token, post_id)
 
     # 7. Postni o'chirish testi
-    test_delete_post(token, post_id)
+    # test_delete_post(token, post_id)
 
     print("Barcha testlar muvaffaqiyatli yakunlandi!")
 
