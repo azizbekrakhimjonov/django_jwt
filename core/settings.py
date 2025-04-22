@@ -3,6 +3,8 @@ from pathlib import Path
 from datetime import timedelta
 import os
 
+from django.conf.global_settings import CSRF_TRUSTED_ORIGINS, MEDIA_ROOT
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-jt)r=%5*8l5!!vjy@#@mkz%q*cc9jqkxd54kmri3q%n4a(5l_%'
@@ -11,6 +13,7 @@ SECRET_KEY = 'django-insecure-jt)r=%5*8l5!!vjy@#@mkz%q*cc9jqkxd54kmri3q%n4a(5l_%
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# CSRF_TRUSTED_ORIGINS = ['']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -79,11 +82,16 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 USE_I18N = True
-USE_TZ = True
+USE_TZ = False
 
 STATIC_URL = 'static/'
+STATIC_ROOT = 'static/'
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = 'media/'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
