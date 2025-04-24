@@ -44,4 +44,5 @@ urlpatterns = [
     # Post URLs
     path('api/posts/', PostListCreateView.as_view(), name='post-list-create'),
     path('api/posts/<int:pk>/', PostRetrieveUpdateDestroyView.as_view(), name='post-retrieve-update-destroy'),
+
 ]
